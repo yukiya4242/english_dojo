@@ -30,6 +30,8 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+gem 'bootstrap', '~> 5.0.2'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -77,3 +79,4 @@ gem "devise-i18n"
 gem "jquery-rails"
 gem "rails-i18n"
 gem "activeadmin"
+
