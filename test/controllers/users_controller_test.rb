@@ -1,28 +1,38 @@
-require "test_helper"
+# test/controllers/users_controller_test.rb
+require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+  end
+
   test "should get index" do
-    get users_index_url
+    get users_url
     assert_response :success
   end
 
   test "should get show" do
-    get users_show_url
+    get user_url(@user)
     assert_response :success
   end
 
-  test "should get create" do
-    get users_create_url
+  test "should get edit" do
+    get edit_user_url(@user)
     assert_response :success
   end
 
-  test "should get update" do
-    get users_update_url
-    assert_response :success
+  test "should update user" do
+    patch user_url(@user), params: { user: { username: "New Username" } }
+    assert_redirected_to user_url(@user)
+    @user.reload
+    assert_equal "New Username", @user.username
   end
 
-  test "should get destroy" do
-    get users_destroy_url
-    assert_response :success
+  test "should destroy user" do
+    assert_difference('User.count', -1) do
+      delete user_url(@user)
+    end
+
+    assert_redirected_to users_url
   end
 end
