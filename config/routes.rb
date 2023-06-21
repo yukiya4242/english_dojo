@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :relationships, only:[:create, :destroy]
 
 
-  resources :questions,     only:[:index, :show] do
+  resources :quizzes,     only:[:index, :show] do
     member do
       post :check_answer
     end
