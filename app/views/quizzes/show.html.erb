@@ -1,7 +1,0 @@
-<h1>英単語クイズ</h1>
-<p id="question"><%= @quiz.question%></p>
-<%= form_with(url: check_answer_question_path(@quiz), method: "post", id: "quiz-form", local: true) do %>
-  <%= text_field_tag :answer,  '', id: 'answer' %>
-  <%= hidden_field_tag :correct_answer, @quiz[:amswer] %>
-  <%= submit_tag "送信" %>
-<%= end %>

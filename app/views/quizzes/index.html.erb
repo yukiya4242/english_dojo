@@ -1,2 +1,13 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<%= render 'layouts/header' %>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+  <div>
+    <h1>英単語クイズ</h1>
+    <p id="question"><%= @question %></p>
+    <%= form_with(url: check_answer_quiz_path(@quiz), method: "post", id: "quiz-form", local: false) do %>
+      <%= text_field_tag :answer,  '', id: 'answer' %>
+      <%= hidden_field_tag :correct_answer, @answer %>
+      <%= submit_tag "送信" %>
+    <% end %>
+  </div>
+</div>

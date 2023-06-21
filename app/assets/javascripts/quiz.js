@@ -1,14 +1,14 @@
 $(document).on('turbolinks:load', function() {
   $('#quiz-form').on('submit', function(e) {
     e.preventDefault();
-    
+
     $.ajax({
       url: $(this).attr('action'),
       type: 'POST',
       dataType: 'json',
       data: $(this).serialize()
     })
-    
+
     .done(function(data){
       if(data.status === 'success'){
         $('#question').text(data.question);

@@ -5,13 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+unless AdminUser.exists?(email: 'admin@example.com')
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+end
 
 #question
-Question.create([
-  { word: "apple" },
-  { word: "banana" },
-  { word: "grape" },
-  { word: "orange" },
-  { word: "melon" },
+Quiz.create([
+  { content: "apple" },
+  { content: "banana" },
+  { content: "grape" },
+  { content: "orange" },
+  { content: "melon" },
   ])
