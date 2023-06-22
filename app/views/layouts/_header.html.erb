@@ -1,4 +1,4 @@
-<body>
+<body class="pt-5">
   <!-- ナビゲーションバー -->
   <nav class="navbar navbar-light bg-light fixed-top">
     <!-- タイトル -->
@@ -13,6 +13,11 @@
         <li class="nav-item active">
           <%= link_to "Home", root_url %>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "マイページ", user_path(current_user) %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "新規会員登録", new_user_registration_path %>
         </li>
@@ -20,7 +25,7 @@
           <%= link_to "ログイン", new_user_session_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "ログアウト", destroy_user_session_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
         <li class="nav-item">
           <%= link_to "クイズへゴー", quizzes_path %>

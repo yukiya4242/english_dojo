@@ -83,4 +83,4 @@ gem "devise-i18n"
 gem "jquery-rails"
 gem "rails-i18n"
 gem "activeadmin"
-
+gem 'webpacker'

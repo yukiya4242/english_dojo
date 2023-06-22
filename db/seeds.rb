@@ -9,7 +9,11 @@ unless AdminUser.exists?(email: 'admin@example.com')
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 end
 
-#question
+unless User.exists?(email: 'test@test.com')
+  User.create!(email: 'test@test.com', username: 'TestUser', password: 'password', password_confirmation: 'password')
+end
+
+#Quizzes
 Quiz.create([
   { content: "apple" },
   { content: "banana" },

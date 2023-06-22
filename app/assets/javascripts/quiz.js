@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+  $(function() {
   $('#quiz-form').on('submit', function(e) {
     e.preventDefault();
 
@@ -6,8 +6,12 @@ $(document).on('turbolinks:load', function() {
       url: $(this).attr('action'),
       type: 'POST',
       dataType: 'json',
-      data: $(this).serialize()
+      data: $(this).serialize(),
+      headers: {
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
     })
+
 
     .done(function(data){
       if(data.status === 'success'){

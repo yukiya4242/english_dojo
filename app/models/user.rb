@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :username,  presence: true
   validates :email, presence: true
 
+  has_many :scores
+
   has_one_attached :profile_image
 
 end
