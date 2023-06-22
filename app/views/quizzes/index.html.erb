@@ -1,9 +1,10 @@
 <%= render 'layouts/header' %>
 
 <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
-  <div>
+  <div id="quiz-div">
+    <div id="total-score">0</div>Point
     <h1>英単語クイズ</h1>
-    <p id="question"><%= @question %></p>
+    <span id="question"><%= @question %></span>
     <%= form_with(url: check_answer_quiz_path(@quiz), method: "post", id: "quiz-form", local: false) do %>
       <%= text_field_tag :answer,  '', id: 'answer' %>
       <%= hidden_field_tag :correct_answer, @answer %>

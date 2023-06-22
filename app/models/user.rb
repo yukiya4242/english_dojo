@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  def total_score
+    scores.sum(:point)
+  end
+
 end

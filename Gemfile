@@ -76,6 +76,7 @@ group :test do
   gem "webdrivers"
   gem 'rails-controller-testing'
   gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 4.5'
 end
 
 gem "devise"
