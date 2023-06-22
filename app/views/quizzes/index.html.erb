@@ -2,14 +2,15 @@
 
 <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
   <div id="quiz-div">
-    <div id="total-score">0</div>Point
+    <div id="total-score"><%= @total_score %></div> Point
     <h1>英単語クイズ</h1>
     <span id="question"><%= @question %></span>
-    <%= form_with(url: check_answer_quiz_path(@quiz), method: "post", id: "quiz-form", local: false) do %>
+    <%= form_with(url: check_answer_quiz_path(@quiz), method: "post", id: "quiz-form", local: false, data: { turbo: false }) do %>
       <%= text_field_tag :answer,  '', id: 'answer' %>
       <%= hidden_field_tag :correct_answer, @answer %>
       <%= submit_tag "送信" %>
     <% end %>
+    <%= button_to 'リセット', start_quizzes_path, method: :post %>
   </div>
 </div>
 <%= javascript_include_tag 'quiz' %>

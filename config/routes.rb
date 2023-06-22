@@ -25,7 +25,8 @@ Rails.application.routes.draw do
       post :check_answer
     end
     collection do
-      get :finished
+      get  :finished
+      post :start
     end
   end
 

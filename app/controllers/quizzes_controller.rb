@@ -6,6 +6,7 @@ class QuizzesController < ApplicationController
      @quiz = Quiz.find_by(content: quiz_data[:answer])
      @question = quiz_data[:question]
      @answer = quiz_data[:answer]
+     @total_score = 0
   end
 
   def show
@@ -33,6 +34,11 @@ class QuizzesController < ApplicationController
       total_score = current_user.scores.sum(:point)
       render json: { status: 'error', message: '不正解です。もう1度挑戦しよう!!', total_score: total_score }
     end
+  end
+
+  def start
+    current_user.scores.destroy_all
+    redirect_to quizzes_path
   end
 
   def finished

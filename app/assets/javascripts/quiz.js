@@ -1,4 +1,5 @@
   $(function() {
+
   $('#quiz-form').on('submit', function(e) {
     e.preventDefault();
 
