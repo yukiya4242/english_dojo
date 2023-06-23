@@ -58,6 +58,12 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :production do
+  # https://github.com/rails/rails/blob/v6.1.4.6/activestorage/lib/active_storage/service/s3_service.rb#L3
+  gem "aws-sdk-s3", '~> 1.48'
+end
+
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

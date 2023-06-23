@@ -15,10 +15,12 @@ end
 
 # Quizzes
 Quiz.create([
-  { content: "apple" },
-  { content: "banana" },
-  { content: "grape" },
-  { content: "orange" },
-  { content: "melon" },
-  ])
+  { content: "apple", image_url: "https://imge-url.s3.ap-northeast-1.amazonaws.com/apple.jpeg" },
+  { content: "banana", image_url: "https://imge-url.s3.ap-northeast-1.amazonaws.com/banana.jpeg" },
+  { content: "grape", image_url: "https://imge-url.s3.ap-northeast-1.amazonaws.com/grape.jpeg" },
+  { content: "orange", image_url: "https://imge-url.s3.ap-northeast-1.amazonaws.com/orange.jpeg" },
+  { content: "melon", image_url: "https://imge-url.s3.ap-northeast-1.amazonaws.com/melon.jpeg" },
+])
+
+
 

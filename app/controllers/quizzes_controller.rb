@@ -7,6 +7,8 @@ class QuizzesController < ApplicationController
      @question = quiz_data[:question]
      @answer = quiz_data[:answer]
      @total_score = 0
+     @image_url = @quiz.image_url
+     puts "Debug: #{@quiz.inspect}"
   end
 
   def show
@@ -24,9 +26,18 @@ class QuizzesController < ApplicationController
 
        if @next_quiz
          question = hide_random_char(@next_quiz.content)
-         render json: { status: 'success', question: question, id: @next_quiz.id, total_score: total_score }
+         render json: {
+           status: 'success',
+           question: question,
+           id: @next_quiz.id,
+           total_score: total_score,
+           image_url: @next_quiz.image_url #画像URL追加
+           }
        else
-         render json: { status: 'finished' }
+         render json: {
+           status: 'finished',
+           user_path: user_path(current_user)
+           }
        end
     else
       score = current_user.scores.create(point: -10, quiz_id: @quiz.id)

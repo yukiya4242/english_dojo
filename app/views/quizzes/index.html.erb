@@ -11,6 +11,11 @@
       <%= submit_tag "送信" %>
     <% end %>
     <%= button_to 'リセット', start_quizzes_path, method: :post %>
+
+      <img id="quiz-image" src="<%= @quiz.image_url %>" alt="<%= @quiz.content %> image" style="width: 300px; height: 300px;">
+
+
+
   </div>
 </div>
 <%= javascript_include_tag 'quiz_index' %>
