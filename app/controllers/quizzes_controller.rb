@@ -2,13 +2,18 @@ class QuizzesController < ApplicationController
   before_action :authenticate_user!, only:[:index, :show, :check_answer, :finished]
 
   def index
-     quiz_data = Quiz.random_question
-     @quiz = Quiz.find_by(content: quiz_data[:answer])
+    if params[:genre]
+      quiz_data = Quiz.where(genre: params[:genre])
+      # quiz_data = Quiz.random_question(quizzes)
+    else
+      quiz_data = Quiz.random_question
+    end
+     @quiz = Quiz.find(quiz_data[:id])
+    # @quiz = Quiz.find_by(content: quiz_data[:answer])
      @question = quiz_data[:question]
      @answer = quiz_data[:answer]
      @total_score = 0
      @image_url = @quiz.image_url
-     puts "Debug: #{@quiz.inspect}"
   end
 
   def show

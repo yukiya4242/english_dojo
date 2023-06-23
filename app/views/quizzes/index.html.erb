@@ -1,4 +1,7 @@
 <%= render 'layouts/header' %>
+<% Quiz.pluck(:genre).uniq.each do |genre| %>
+  <%= link_to genre, quizzes_path(genre: genre) %>
+<% end %>
 
 <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
   <div id="quiz-div">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_23_020655) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_23_082624) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -81,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_23_020655) do
     t.string "answers"
     t.string "word"
     t.string "image_url"
+    t.string "genre"
   end
 
   create_table "relation_ships", force: :cascade do |t|
