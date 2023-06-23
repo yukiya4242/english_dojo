@@ -13,7 +13,7 @@ unless User.exists?(email: 'test@test.com')
   User.create!(email: 'test@test.com', username: 'TestUser', password: 'password', password_confirmation: 'password')
 end
 
-Quizzes
+# Quizzes
 Quiz.create([
   { content: "apple" },
   { content: "banana" },
