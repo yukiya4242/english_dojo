@@ -3,7 +3,7 @@ class QuizzesController < ApplicationController
 
   def index
     if params[:genre]
-      quiz_data = Quiz.where(genre: params[:genre])
+      quiz_data = Quiz.random_question(params[:genre])
       # quiz_data = Quiz.random_question(quizzes)
     else
       quiz_data = Quiz.random_question

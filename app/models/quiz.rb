@@ -9,6 +9,6 @@ class Quiz < ApplicationRecord
     content = question.content
     half_length = (content.length / 2.0).ceil #単語の長さを2で割り、その結果を小数点切り上げ(ceil)して半分の長さを計算
     hidden_content = content[0, half_length] + '_' * half_length
-    { question: hidden_content, answer: content, id: quiz.id }
+    { question: hidden_content, answer: content, id: question.id }
   end
 end
