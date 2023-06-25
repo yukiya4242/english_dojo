@@ -1,0 +1,6 @@
+content,genre,image_url
+happy,形容詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/happy.jpeg
+sad,形容詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/sad.jpeg
+big,形容詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/big.jpeg
+small,形容詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/small.jpeg
+fast,形容詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/fast.jpeg

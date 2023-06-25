@@ -1,9 +1,16 @@
-# require 'app/db/contents.csv'
+require 'csv'
 
-# CSV.foreach(Rails.root.join('db/contents.csv')) do |row|
-#   Quiz.create(content: row[0])
-# end
+csv_files = %w[Adjective Adverb Conjunctive Interjection Noun Preposition Pronoun Verb]
 
+csv_files.each do |file|
+  CSV.foreach(Rails.root.join('db', 'csvs', "EnglishDoJo_Quiz_#{file}.csv"), headers: true) do |row|
+    Quiz.create!(
+      content:   row['content'],
+      genre:     row['genre'],
+      image_url: row['image_url']
+      )
+    end
+  end
 
 unless AdminUser.exists?(email: 'admin@example.com')
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
@@ -12,6 +19,8 @@ end
 unless User.exists?(email: 'test@test.com')
   User.create!(email: 'test@test.com', username: 'TestUser', password: 'password', password_confirmation: 'password')
 end
+
+
 
 # Quizzes
 # Quiz.create([

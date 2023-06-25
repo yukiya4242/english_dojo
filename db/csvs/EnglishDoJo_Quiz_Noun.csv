@@ -1,0 +1,10 @@
+content,genre,image_url
+apple,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/apple.jpeg
+banana,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/banana.jpeg
+grape,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/grape.jpeg
+orange,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/orange.jpeg
+melon,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/melon.jpeg
+cat,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/cat.jpeg
+dog,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/dog.jpeg
+car,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/car.jpeg
+book,名詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/book.jpeg
