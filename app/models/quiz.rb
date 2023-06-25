@@ -11,4 +11,13 @@ class Quiz < ApplicationRecord
     hidden_content = content[0, half_length] + '_' * half_length
     { question: hidden_content, answer: content, id: question.id }
   end
+
+
+  def self.random_question_by_id(id)
+    question = Quiz.find(id)
+    content = question.content
+    half_length = (content.length / 2.0).ceil
+    hidden_content = content[0, half_length] + '_' * half_length
+    { question: hidden_content, answer: content, id: question.id }
+  end
 end

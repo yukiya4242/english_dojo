@@ -19,20 +19,24 @@
 
       if(data.status === 'success'){
         $('#quiz-div').css('background-color', '#ADFF2F');
-        $('#quiz-div').fadeOut(300, function(){
+        $('#quiz-div').fadeOut(500, function(){
+          $('#quiz-div').css('background-color', '#FFFFFF')
           $('#question').text(data.question);
           $('#quiz-form').attr('action', '/quizzes/' + data.id + '/check_answer');
           $('#quiz-image').attr('src', data.image_url);
           $('#answer').val('');
-          $('#quiz-div').fadeIn(300, function(){
+          $('#quiz-div').fadeIn(500, function(){
             $('#total-score').text(data.total_score);
+            // 残り問題数の更新
+            $('#how-many-quizzes').text('残り問題数: ' + data.remember_quizzes);
           });
         });
 
       } else if (data.status === 'error'){
-        $('#quiz-div').css('background-color', '#FFA500');
-        alert(data.message);
+        // $('#quiz-div').css('background-color', '#FFA500');
+          alert(data.message);
         $('#total-score').text(data.total_score);
+
 
       } else if (data.status == 'finished'){
         $('body').html('<h1>おめでとうございます！</h1><span>全ての問題を解答しました！</span><br><a href="' + data.user_path + '" class="btn">マイページに戻る</a>');
