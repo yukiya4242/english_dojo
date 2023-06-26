@@ -27,6 +27,20 @@ class QuizzesController < ApplicationController
     @answer = quiz_data[:answer]
     @total_score = 0
     @image_url = @quiz.image_url
+
+     #JSONレスポンスを返す
+     respond_to do |format|
+       format.html
+         format.json do
+           render json: {
+             id: @quiz.id,
+             question: @question,
+             total_score: @total_score,
+             image_url: @image_url,
+             remember_quizzes: @remember_quizzes
+           }
+         end
+      end
   end
 
 

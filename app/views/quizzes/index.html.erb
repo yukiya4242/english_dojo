@@ -1,10 +1,10 @@
 <%= render 'layouts/header' %>
 <% Quiz.pluck(:genre).uniq.each do |genre| %>
-  <%= link_to genre, quizzes_path(genre: genre) %>
+  <%= link_to genre, quizzes_path(genre: genre), class: 'quiz-genre' %>
 <% end %>
 
 <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
-  <div id="quiz-div">
+  <div id="quiz-div" style="display: none;">
     <div id="total-score"><%= @total_score %></div> Point
     <h2 id="how-many-quizzes">残り問題数: <%= @remember_quizzes %></h2>
     <h1><%= params[:genre] ? params[:genre]: '英単語クイズ' %></h1>
