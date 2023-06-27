@@ -16,7 +16,9 @@
     <% end %>
     <%= button_to 'リセット', start_quizzes_path, method: :post %>
       <img id="quiz-image" src="<%= @quiz.image_url %>" alt="<%= @quiz.content %> image" style="width: 300px; height: 300px; border-radius: 20px;">
-      <%= link_to '次の問題へ', quizzes_path(genre: params[:genre]), method: :get, class: 'btn btn-primary' %>
+      <%#= link_to '次の問題へ', quizzes_path(genre: params[:genre]), method: :get, class: 'btn btn-primary' %>
   </div>
 </div>
 <%= javascript_include_tag 'quiz_index' %>
+
+<h1>仮</h1>
