@@ -7,3 +7,7 @@
 <p>ユーザーネーム: <%= @user.username %></p>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<p>最終ログイン: <%= @user.current_sign_in_at.strftime("%Y年%m月%d日") %></p>
+
+<%= link_to "ユーザー編集", edit_user_path %>

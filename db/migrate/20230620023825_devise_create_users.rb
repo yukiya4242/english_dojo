@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :profile_image
       t.boolean :is_deleted,        default: false
       t.string :encrypted_password, null: false, default: ""
-      
+
 
       ## Recoverable
       t.string   :reset_password_token
@@ -19,11 +19,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :remember_created_at
 
       ## Trackable
-      # t.integer  :sign_in_count, default: 0, null: false
-      # t.datetime :current_sign_in_at
-      # t.datetime :last_sign_in_at
-      # t.string   :current_sign_in_ip
-      # t.string   :last_sign_in_ip
+      t.integer  :sign_in_count, default: 0, null: false #ユーザーがサインインした回数
+      t.datetime :current_sign_in_at #ユーザーが最後にサインインした日時
+      t.datetime :last_sign_in_at #一つ前にサインインした日時
+      t.string   :current_sign_in_ip #最後にサインインしたIPアドレス
+      t.string   :last_sign_in_ip #一つ前にサインインしたIPアドレス
 
       ## Confirmable
       # t.string   :confirmation_token

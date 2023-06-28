@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(update_params)
-      redirect_to @user
+      flash[:notice] = "編集に成功しました。再度ログインしてください"
+      redirect_to (@user)
     else
+      p @user.errors
       render 'edit'
     end
   end

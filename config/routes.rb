@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :users,         only:[:index, :show, :create, :update, :destroy]
+  resources :users
   resources :homes,         only:[:top, :about]
   resources :scores,        only:[:index, :show, :create, :update, :destroy]
   resources :answers,       only:[:create, :update]

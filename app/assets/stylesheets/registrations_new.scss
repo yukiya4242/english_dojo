@@ -8,6 +8,7 @@
 
 .form {
   position: relative;
+  border-radius: 8px;
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
@@ -29,6 +30,7 @@
   }
 
   .form-submit {
+    border-radius: 5px;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -62,7 +64,7 @@
 }
 
 .signup-body {
-  height: 700px;
+  height: 850px;
   background: #76b852; /* fallback for old browsers */
   background: rgb(141,194,111);
   background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
