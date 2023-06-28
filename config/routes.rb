@@ -13,7 +13,13 @@ Rails.application.routes.draw do
 
 
 
-  resources :users
+  resources :users do
+    member do
+      delete :hide, as: 'users_hide'
+    end
+ end
+
+
   resources :homes,         only:[:top, :about]
   resources :scores,        only:[:index, :show, :create, :update, :destroy]
   resources :answers,       only:[:create, :update]

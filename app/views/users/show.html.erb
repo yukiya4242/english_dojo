@@ -11,3 +11,7 @@
 <p>最終ログイン: <%= @user.current_sign_in_at.strftime("%Y年%m月%d日") %></p>
 
 <%= link_to "ユーザー編集", edit_user_path %>
+
+<% if user_signed_in? && @user.id == current_user.id %>
+  <%= button_to "退会", users_hide_user_path(current_user), method: :delete, class: 'btn btn-outline-danger' %>
+<% end %>

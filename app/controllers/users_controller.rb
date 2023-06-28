@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only:[:index, :show, :edit, :update, :destroy]
+  before_action :check_user_status,  only:[:show]
 
   def index
-    @users = User.all
+    @all_users = User.all
+    @users = User.where(is_deleted: false) #退会済みではないユーザーのみ一覧に表示
+  end
+
+  def hide
+    @user = User.find(params[:id])
+    @user.update(is_deleted: true) #trueは退会してるかのことtrue=退会ずみ, false=退会済みでない
+    reset.session
+    flash[:notice] = "またのご利用心よりお待ちしております。"
+    redirect_to root_url
   end
 
   def show
@@ -25,6 +35,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_user_status
+    user = User.find(params[:id])
+    if user.is_deleted
+      flash[:noitce] = "ユーザーは退会済みです"
+      redirect_to root_url
+    end
+  end
 
   def update_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)

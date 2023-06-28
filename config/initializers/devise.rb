@@ -269,6 +269,7 @@ Devise.setup do |config|
 
 
   config.sign_out_via = :get
+  # config.sign_out_via = :delete
   #本当は:deleteにしないとshowに行ってしまうが、:getにするとdeleteになる？謎です
 
 
