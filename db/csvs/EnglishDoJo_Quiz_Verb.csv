@@ -1,6 +1,6 @@
-content,genre,image_url
-run,動詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/run.jpeg
-walk,動詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/walk.jpeg
-eat,動詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/eat.jpeg
-sleep,動詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/sleep.jpeg
-play,動詞,https://imge-url.s3.ap-northeast-1.amazonaws.com/play.jpeg
+content,genre,meaning,image_url
+run,動詞,走る,https://imge-url.s3.ap-northeast-1.amazonaws.com/run.jpeg
+walk,動詞,歩く,https://imge-url.s3.ap-northeast-1.amazonaws.com/walk.jpeg
+eat,動詞,食べる,https://imge-url.s3.ap-northeast-1.amazonaws.com/eat.jpeg
+sleep,動詞,寝る,https://imge-url.s3.ap-northeast-1.amazonaws.com/sleep.jpeg
+play,動詞,遊ぶ,https://imge-url.s3.ap-northeast-1.amazonaws.com/play.jpeg

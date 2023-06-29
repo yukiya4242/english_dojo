@@ -16,6 +16,7 @@ $(function() {
       $('#quiz-image').attr('src', data.image_url);
       $('#quiz-div').show();
       $('#how-many-quizzes').text('残り問題数: ' + data.remember_quizzes);
+
     })
     .fail(function() {
       alert('問題の取得に失敗しました。');
@@ -46,12 +47,14 @@ $(function() {
           $('#quiz-image').attr('src', data.image_url);
           $('#answer').val('');
           $('#quiz-div').fadeIn(500, function() {
+            $('#meaning').text(data.meaning);
             $('#total-score').text(data.total_score);
             $('#how-many-quizzes').text('残り問題数: ' + data.remember_quizzes);
           });
         });
       } else if (data.status === 'error') {
         alert(data.message);
+        $('#meaning').text(data.meaning);
         $('#total-score').text(data.total_score);
       } else if (data.status == 'finished') {
         $('body').html('<h1>おめでとうございます！</h1><span>全ての問題を解答しました！</span><br><a href="' + data.user_path + '" class="btn">マイページに戻る</a>');

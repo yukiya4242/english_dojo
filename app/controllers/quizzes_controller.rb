@@ -83,7 +83,8 @@ class QuizzesController < ApplicationController
            id: @next_quiz.id,
            total_score: total_score,
            image_url: @next_quiz.image_url, #画像URL追加
-           remember_quizzes: remember_quiz_ids.size #この理問題数を追加
+           remember_quizzes: remember_quiz_ids.size, #この理問題数を追加
+           meaning: @quiz.meaning #英単語クイズの意味
            }
        else
          render json: {
@@ -95,7 +96,10 @@ class QuizzesController < ApplicationController
       score = current_user.scores.create(point: -10, quiz_id: @quiz.id)
       @next_quiz = Quiz.where("id > ?", @quiz.id).first
       total_score = current_user.scores.sum(:point)
-      render json: { status: 'error', message: '不正解です。もう1度挑戦しよう!!', total_score: total_score }
+      render json: { status: 'error', message: '不正解です。もう1度挑戦しよう!!',
+      total_score: total_score,
+      meaning: @quiz.meaning
+      }
     end
   end
 

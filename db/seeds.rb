@@ -7,7 +7,8 @@ csv_files.each do |file|
     Quiz.create!(
       content:   row['content'],
       genre:     row['genre'],
-      image_url: row['image_url']
+      image_url: row['image_url'],
+      meaning:   row['meaning']
       )
     end
   end
