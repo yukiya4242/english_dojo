@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def hide
     @user = User.find(params[:id])
     @user.update(is_deleted: true) #trueは退会してるかのことtrue=退会ずみ, false=退会済みでない
-    reset.session
+    reset_session
     flash[:notice] = "またのご利用心よりお待ちしております。"
     redirect_to root_url
   end
